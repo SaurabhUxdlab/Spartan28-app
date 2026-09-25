@@ -9,7 +9,8 @@ import {
   Check, 
   RefreshCw,
   Sun,
-  Moon
+  Moon,
+  PanelLeft
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useFacility } from '../../context/FacilityContext';
@@ -22,6 +23,8 @@ export const Header = ({
   activeTitle = 'Command Dashboard',
   activeSubtitle = '',
   breadcrumb = 'Overview',
+  isSidebarCollapsed = false,
+  onToggleSidebar,
   onOpenQuickAction,
   onOpenTurnstileScan
 }) => {
@@ -55,27 +58,79 @@ export const Header = ({
         transition: 'background-color 0.25s ease, border-color 0.25s ease'
       }}
     >
-      {/* Left: Page Title & Breadcrumb */}
-      <div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '2px' }}>
-          <span style={{
-            fontSize: '0.68rem',
-            color: 'var(--spartan-green)',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            fontWeight: 700
-          }}>
-            SPARTAN HQ / {breadcrumb}
-          </span>
-        </div>
-        <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--spartan-text-primary)', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>
-          {activeTitle}
-        </h2>
-        {activeSubtitle && (
-          <p style={{ fontSize: '0.78rem', color: 'var(--spartan-text-muted)', marginTop: '2px', fontWeight: 400 }}>
-            {activeSubtitle}
-          </p>
+      {/* Left: Sidebar Toggle & Page Title (Module) */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+        {onToggleSidebar && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <button
+              type="button"
+              id="sidebar-toggle-btn"
+              onClick={onToggleSidebar}
+              title={isSidebarCollapsed ? 'Open sidebar' : 'Close sidebar'}
+              aria-label={isSidebarCollapsed ? 'Open sidebar' : 'Close sidebar'}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '34px',
+                height: '34px',
+                borderRadius: 'var(--radius-sm)',
+                background: isSidebarCollapsed ? 'var(--spartan-green-dim)' : 'transparent',
+                border: `1px solid ${isSidebarCollapsed ? 'var(--spartan-green-border)' : 'transparent'}`,
+                color: isSidebarCollapsed ? 'var(--spartan-green)' : 'var(--spartan-text-secondary)',
+                cursor: 'pointer',
+                transition: 'all 0.15s ease',
+                flexShrink: 0,
+                padding: 0
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = 'var(--spartan-text-primary)';
+                e.currentTarget.style.background = isSidebarCollapsed ? 'var(--spartan-green-dim)' : 'rgba(255, 255, 255, 0.08)';
+                e.currentTarget.style.borderColor = isSidebarCollapsed ? 'var(--spartan-green)' : 'var(--spartan-border-subtle)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = isSidebarCollapsed ? 'var(--spartan-green)' : 'var(--spartan-text-secondary)';
+                e.currentTarget.style.background = isSidebarCollapsed ? 'var(--spartan-green-dim)' : 'transparent';
+                e.currentTarget.style.borderColor = isSidebarCollapsed ? 'var(--spartan-green-border)' : 'transparent';
+              }}
+            >
+              <PanelLeft size={18} />
+            </button>
+
+            {/* Vertical pill divider as shown in reference image */}
+            <div
+              style={{
+                width: '2.5px',
+                height: '20px',
+                backgroundColor: 'rgba(255, 255, 255, 0.18)',
+                borderRadius: '9999px',
+                flexShrink: 0
+              }}
+            />
+          </div>
         )}
+
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '2px' }}>
+            <span style={{
+              fontSize: '0.68rem',
+              color: 'var(--spartan-green)',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              fontWeight: 700
+            }}>
+              SPARTAN HQ / {breadcrumb}
+            </span>
+          </div>
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--spartan-text-primary)', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>
+            {activeTitle}
+          </h2>
+          {activeSubtitle && (
+            <p style={{ fontSize: '0.78rem', color: 'var(--spartan-text-muted)', marginTop: '2px', fontWeight: 400 }}>
+              {activeSubtitle}
+            </p>
+          )}
+        </div>
       </div>
 
       {/* Right Controls */}

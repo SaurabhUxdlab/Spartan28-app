@@ -66,6 +66,8 @@ export const DashboardLayout = ({
           activeTitle={activeTitle}
           activeSubtitle={activeSubtitle}
           breadcrumb={activeCategory}
+          isSidebarCollapsed={isSidebarCollapsed}
+          onToggleSidebar={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
           onOpenQuickAction={() => setIsQuickActionOpen(true)}
           onOpenTurnstileScan={() => setIsScannerOpen(true)}
         />

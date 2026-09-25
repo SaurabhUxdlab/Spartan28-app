@@ -125,7 +125,13 @@ export const Sidebar = ({ activeTab, onSelectTab, isCollapsed, onToggleCollapse 
           minHeight: 'var(--header-height)'
         }}
       >
-        <SpartanLogo size={isCollapsed ? 'small' : 'default'} showText={!isCollapsed} />
+        <div
+          onClick={isCollapsed ? onToggleCollapse : undefined}
+          style={{ cursor: isCollapsed ? 'pointer' : 'default', display: 'flex', alignItems: 'center' }}
+          title={isCollapsed ? 'Expand Sidebar' : undefined}
+        >
+          <SpartanLogo size={isCollapsed ? 'small' : 'default'} showText={!isCollapsed} />
+        </div>
         
         {!isCollapsed && (
           <button
