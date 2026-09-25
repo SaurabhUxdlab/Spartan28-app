@@ -1,111 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --font-headline: 'Barlow Condensed', 'Bebas Neue', 'Oswald', sans-serif;
+  --font-display: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --color-brand-green: #00E676;
+  --color-brand-green-hover: #00C853;
+  --color-brand-green-dim: rgba(0, 230, 118, 0.15);
+  --color-brand-green-border: rgba(0, 230, 118, 0.4);
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --color-bg-black: #0c0e10;
+  --color-bg-card: #15181c;
+  --color-bg-card-alt: #1a1e23;
+  --color-bg-card-hover: #21262d;
+  --color-border-subtle: #272d34;
+  --color-border-bright: rgba(255, 255, 255, 0.15);
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --color-text-white: #ffffff;
+  --color-text-dim: #94a3b8;
+  --color-text-muted: #64748b;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  margin: 0;
+  background-color: #070809;
+  color: #ffffff;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+/* Typography Utility Classes */
+.font-headline {
+  font-family: var(--font-headline);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+.font-body {
+  font-family: var(--font-body);
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
+/* Custom Scrollbar for sleek mobile appearance */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0f12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #252b33;
   border-radius: 4px;
-  color: var(--text-h);
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-green);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Button & interactive animations */
+.btn-green {
+  background-color: var(--color-brand-green);
+  color: #000000;
+  font-family: var(--font-headline);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-green:hover {
+  background-color: #00ff84;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(0, 230, 118, 0.35);
+}
+
+.btn-green:active {
+  transform: translateY(1px);
+}
+
+.btn-outline {
+  background-color: rgba(21, 24, 28, 0.7);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-family: var(--font-headline);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-outline-green {
+  background-color: rgba(0, 230, 118, 0.06);
+  color: var(--color-brand-green);
+  border: 1px solid var(--color-brand-green);
+  font-family: var(--font-headline);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-outline-green:hover {
+  background-color: rgba(0, 230, 118, 0.18);
+  box-shadow: 0 0 15px rgba(0, 230, 118, 0.25);
+}
+
+/* Spartan Glowing Border Effect */
+.glow-border {
+  border: 1.5px solid var(--color-brand-green);
+  box-shadow: 0 0 15px rgba(0, 230, 118, 0.2), inset 0 0 15px rgba(0, 230, 118, 0.05);
 }
