@@ -1,122 +1,110 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import { ToastProvider } from './context/ToastContext';
+import { FacilityProvider } from './context/FacilityContext';
+import { DashboardLayout } from './components/layout/DashboardLayout';
 
-function App() {
-  const [count, setCount] = useState(0)
+// View Imports
+import { LoginView } from './views/Auth/LoginView';
+import { OverviewView } from './views/Overview/OverviewView';
+import { MembersListView } from './views/Members/MembersListView';
+import { CoachesView } from './views/Coaches/CoachesView';
+import { WorkoutsView } from './views/Workouts/WorkoutsView';
+import { ExercisesView } from './views/Exercises/ExercisesView';
+import { ProgramsView } from './views/Programs/ProgramsView';
+import { ClassesView } from './views/Classes/ClassesView';
+import { ScheduleCalendarView } from './views/Schedule/ScheduleCalendarView';
+import { BookingsView } from './views/Bookings/BookingsView';
+import { AttendanceView } from './views/Attendance/AttendanceView';
+import { MembershipsView } from './views/Memberships/MembershipsView';
+import { NutritionView } from './views/Nutrition/NutritionView';
+import { ProgressPerformanceView } from './views/Progress/ProgressPerformanceView';
+import { ContentManagementView } from './views/Content/ContentManagementView';
+import { NotificationsView } from './views/Notifications/NotificationsView';
+import { PaymentsView } from './views/Payments/PaymentsView';
+import { ReportsView } from './views/Reports/ReportsView';
+import { RolesPermissionsView } from './views/Roles/RolesPermissionsView';
+import { AuditLogView } from './views/AuditLog/AuditLogView';
+
+function DashboardRouter() {
+  const { isAuthenticated } = useAuth();
+  const [activeTab, setActiveTab] = useState('overview');
+  const [triggerAction, setTriggerAction] = useState(null);
+
+  if (!isAuthenticated) {
+    return <LoginView />;
+  }
+
+  const renderActiveView = () => {
+    switch (activeTab) {
+      case 'overview':
+        return <OverviewView onNavigate={(tab) => setActiveTab(tab)} />;
+      case 'members':
+        return <MembersListView triggerAction={triggerAction} />;
+      case 'coaches':
+        return <CoachesView triggerAction={triggerAction} />;
+      case 'workouts':
+        return <WorkoutsView triggerAction={triggerAction} />;
+      case 'exercises':
+        return <ExercisesView />;
+      case 'programs':
+        return <ProgramsView />;
+      case 'classes':
+        return <ClassesView triggerAction={triggerAction} />;
+      case 'schedule':
+        return <ScheduleCalendarView />;
+      case 'bookings':
+        return <BookingsView />;
+      case 'attendance':
+        return <AttendanceView />;
+      case 'memberships':
+        return <MembershipsView />;
+      case 'nutrition':
+        return <NutritionView triggerAction={triggerAction} />;
+      case 'progress':
+        return <ProgressPerformanceView />;
+      case 'content':
+        return <ContentManagementView />;
+      case 'notifications':
+        return <NotificationsView triggerAction={triggerAction} />;
+      case 'payments':
+        return <PaymentsView />;
+      case 'reports':
+        return <ReportsView />;
+      case 'roles':
+        return <RolesPermissionsView />;
+      case 'audit':
+        return <AuditLogView />;
+      default:
+        return <OverviewView onNavigate={(tab) => setActiveTab(tab)} />;
+    }
+  };
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+    <DashboardLayout
+      activeTab={activeTab}
+      onSelectTab={(tab) => {
+        setActiveTab(tab);
+        setTriggerAction(null);
+      }}
+      triggerAction={triggerAction}
+      setTriggerAction={setTriggerAction}
+    >
+      {renderActiveView()}
+    </DashboardLayout>
+  );
 }
 
-export default App
+export function App() {
+  return (
+    <AuthProvider>
+      <FacilityProvider>
+        <ToastProvider>
+          <DashboardRouter />
+        </ToastProvider>
+      </FacilityProvider>
+    </AuthProvider>
+  );
+}
+
+export default App;
