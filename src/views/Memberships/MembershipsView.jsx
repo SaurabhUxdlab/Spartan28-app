@@ -68,7 +68,7 @@ export const MembershipsView = () => {
       {/* Top Controls */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
         <div>
-          <h3 style={{ fontSize: '1.15rem', color: '#FFF' }}>Configured Membership Tiers</h3>
+          <h3 style={{ fontSize: '1.15rem', color: 'var(--spartan-text-primary)' }}>Configured Membership Tiers</h3>
           <p style={{ fontSize: '0.8rem', color: 'var(--spartan-text-muted)', marginTop: '2px' }}>
             Manage recurring subscriptions, elite class packs, and drop-in pricing configurations
           </p>
@@ -96,7 +96,7 @@ export const MembershipsView = () => {
               flexDirection: 'column',
               justifyContent: 'space-between',
               position: 'relative',
-              background: 'linear-gradient(180deg, var(--spartan-bg-card) 0%, var(--spartan-bg-surface) 100%)',
+              background: 'var(--spartan-bg-card)',
               border: plan.name.includes('Annual') || plan.name.includes('Elite') ? '1px solid var(--spartan-green-border)' : '1px solid var(--spartan-border-subtle)'
             }}
           >
@@ -113,7 +113,7 @@ export const MembershipsView = () => {
               <div style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--spartan-text-muted)', marginBottom: '4px' }}>
                 {plan.id}
               </div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#FFF', marginBottom: '8px' }}>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--spartan-text-primary)', marginBottom: '8px' }}>
                 {plan.name}
               </h3>
 
@@ -150,7 +150,7 @@ export const MembershipsView = () => {
             <div style={{ borderTop: '1px solid var(--spartan-border-subtle)', paddingTop: '12px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.75rem', color: 'var(--spartan-text-muted)' }}>
                 <Users size={14} />
-                <span style={{ color: '#FFF', fontWeight: 700 }}>{plan.subscribersCount || 0}</span> athletes
+                <span style={{ color: 'var(--spartan-text-primary)', fontWeight: 700 }}>{plan.subscribersCount || 0}</span> athletes
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>

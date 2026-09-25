@@ -68,7 +68,7 @@ export const ReportsView = () => {
       {/* Top Filter Bar */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
         <div>
-          <h3 style={{ fontSize: '1.15rem', color: '#FFF' }}>Operational & Revenue Intelligence</h3>
+          <h3 style={{ fontSize: '1.15rem', color: 'var(--spartan-text-primary)' }}>Operational & Revenue Intelligence</h3>
           <p style={{ fontSize: '0.8rem', color: 'var(--spartan-text-muted)', marginTop: '2px' }}>
             Comprehensive analytics for memberships, class attendance, and workout completions
           </p>
@@ -188,7 +188,7 @@ export const ReportsView = () => {
               <div style={{ fontSize: '0.75rem', color: 'var(--spartan-text-muted)', marginBottom: '4px' }}>
                 {item.name}
               </div>
-              <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#FFF' }}>
+              <div style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--spartan-text-primary)' }}>
                 {item.subscribers} Athletes
               </div>
               <div style={{ fontSize: '0.72rem', color: 'var(--spartan-green)', fontFamily: 'var(--font-mono)', marginTop: '4px' }}>

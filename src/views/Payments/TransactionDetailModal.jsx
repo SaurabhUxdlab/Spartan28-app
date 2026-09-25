@@ -71,7 +71,7 @@ export const TransactionDetailModal = ({
         <div style={{ background: 'var(--spartan-bg-surface)', borderRadius: 'var(--radius-md)', padding: '1rem', border: '1px solid var(--spartan-border-subtle)', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.82rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--spartan-border-subtle)', paddingBottom: '8px' }}>
             <span style={{ color: 'var(--spartan-text-muted)' }}>Athlete</span>
-            <span style={{ color: '#FFF', fontWeight: 700 }}>{transaction.memberName}</span>
+            <span style={{ color: 'var(--spartan-text-primary)', fontWeight: 700 }}>{transaction.memberName}</span>
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--spartan-border-subtle)', paddingBottom: '8px' }}>
@@ -81,7 +81,7 @@ export const TransactionDetailModal = ({
 
           <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--spartan-border-subtle)', paddingBottom: '8px' }}>
             <span style={{ color: 'var(--spartan-text-muted)' }}>Item Purchased</span>
-            <span style={{ color: '#FFF', fontWeight: 600 }}>{transaction.item}</span>
+            <span style={{ color: 'var(--spartan-text-primary)', fontWeight: 600 }}>{transaction.item}</span>
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--spartan-border-subtle)', paddingBottom: '8px' }}>
@@ -93,7 +93,7 @@ export const TransactionDetailModal = ({
 
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <span style={{ color: 'var(--spartan-text-muted)' }}>Transaction Date</span>
-            <span style={{ color: '#FFF', fontFamily: 'var(--font-mono)' }}>{transaction.date}</span>
+            <span style={{ color: 'var(--spartan-text-primary)', fontFamily: 'var(--font-mono)' }}>{transaction.date}</span>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ export const TelemetryRing = ({
   target = 100,
   size = 130,
   strokeWidth = 9,
-  accentColor = '#00E575',
+  accentColor = 'var(--spartan-green)',
   label = 'COMPLETED',
   unit = '',
   subtitle
@@ -24,7 +24,7 @@ export const TelemetryRing = ({
             cx={size / 2}
             cy={size / 2}
             r={radius}
-            stroke="rgba(255, 255, 255, 0.08)"
+            stroke="var(--spartan-border-subtle)"
             strokeWidth={strokeWidth}
             fill="transparent"
           />
@@ -41,7 +41,7 @@ export const TelemetryRing = ({
             strokeLinecap="round"
             style={{
               transition: 'stroke-dashoffset 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
-              filter: `drop-shadow(0 0 6px ${accentColor}80)`
+              filter: `drop-shadow(0 0 6px ${accentColor}60)`
             }}
           />
         </svg>
@@ -62,7 +62,7 @@ export const TelemetryRing = ({
             fontSize: size > 110 ? '1.35rem' : '1.1rem',
             fontWeight: 800,
             fontFamily: 'var(--font-heading)',
-            color: '#FFF'
+            color: 'var(--spartan-text-primary)'
           }}>
             {percentage}%
           </span>
@@ -81,7 +81,7 @@ export const TelemetryRing = ({
 
       {subtitle && (
         <div style={{ textAlign: 'center' }}>
-          <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#FFF' }}>
+          <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--spartan-text-primary)' }}>
             {value.toLocaleString()} <span style={{ color: 'var(--spartan-text-muted)', fontWeight: 400 }}>/ {target.toLocaleString()} {unit}</span>
           </div>
           <div style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)', marginTop: '1px' }}>

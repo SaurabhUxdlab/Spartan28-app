@@ -1,10 +1,74 @@
 /* ==========================================================================
    SPARTAN 28 DESIGN SYSTEM & GLOBAL STYLES
-   Tactical Athletic / High-Performance Dark SaaS Theme
+   Tactical Athletic / High-Performance Management Dashboard
    Standardized Global Typography: Open Sans
+   Default Theme: LIGHT (with optional toggleable DARK mode)
    ========================================================================== */
 
-:root {
+/* --------------------------------------------------------------------------
+   THEME TOKENS: LIGHT (DEFAULT)
+   -------------------------------------------------------------------------- */
+:root, [data-theme="light"] {
+  /* Surface & Background Hierarchy */
+  --spartan-bg-base: #F8FAFC;
+  --spartan-bg-surface: #FFFFFF;
+  --spartan-bg-card: #FFFFFF;
+  --spartan-bg-card-hover: #F1F5F9;
+  --spartan-bg-elevated: #F8FAFC;
+  --spartan-bg-input: #FFFFFF;
+  --spartan-bg-glass: rgba(255, 255, 255, 0.92);
+
+  /* Primary Brand Accents (Spartan Green) */
+  --spartan-green: #009E4F;
+  --spartan-green-hover: #008743;
+  --spartan-green-light: #00C864;
+  --spartan-green-dim: rgba(0, 158, 79, 0.1);
+  --spartan-green-dimmer: rgba(0, 158, 79, 0.04);
+  --spartan-green-border: rgba(0, 158, 79, 0.3);
+  --spartan-green-glow: 0 0 16px rgba(0, 158, 79, 0.18);
+  --spartan-btn-primary-text: #FFFFFF;
+
+  /* Accent Color Palette */
+  --spartan-cyan: #0284C7;
+  --spartan-cyan-dim: rgba(2, 132, 199, 0.1);
+  --spartan-amber: #D97706;
+  --spartan-amber-dim: rgba(217, 119, 6, 0.1);
+  --spartan-red: #DC2626;
+  --spartan-red-dim: rgba(220, 38, 38, 0.1);
+  --spartan-purple: #9333EA;
+  --spartan-purple-dim: rgba(147, 51, 234, 0.1);
+  --spartan-blue: #2563EB;
+  --spartan-blue-dim: rgba(37, 99, 235, 0.1);
+
+  /* Typography & Text */
+  --spartan-text-primary: #0F172A;
+  --spartan-text-secondary: #475569;
+  --spartan-text-muted: #64748B;
+  --spartan-text-dim: #94A3B8;
+
+  /* Borders & Dividers */
+  --spartan-border-subtle: #E2E8F0;
+  --spartan-border-light: #CBD5E1;
+  --spartan-border-medium: #94A3B8;
+  --spartan-border-active: rgba(0, 158, 79, 0.6);
+  --spartan-overlay: rgba(15, 23, 42, 0.5);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --shadow-tactical: 0 4px 20px rgba(0, 158, 79, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  /* Scrollbar */
+  --scrollbar-track: #F1F5F9;
+  --scrollbar-thumb: #CBD5E1;
+  --scrollbar-thumb-hover: #94A3B8;
+}
+
+/* --------------------------------------------------------------------------
+   THEME TOKENS: DARK (ALTERNATE)
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] {
   /* Surface & Background Hierarchy */
   --spartan-bg-base: #080B10;
   --spartan-bg-surface: #0E131C;
@@ -14,7 +78,7 @@
   --spartan-bg-input: #101622;
   --spartan-bg-glass: rgba(14, 19, 28, 0.85);
 
-  /* Primary Brand Accents (Spartan High-Vis Neon & Emerald) */
+  /* Primary Brand Accents (Spartan High-Vis Neon) */
   --spartan-green: #00E575;
   --spartan-green-hover: #00FF87;
   --spartan-green-light: #4EFEB3;
@@ -22,6 +86,7 @@
   --spartan-green-dimmer: rgba(0, 229, 117, 0.05);
   --spartan-green-border: rgba(0, 229, 117, 0.28);
   --spartan-green-glow: 0 0 24px rgba(0, 229, 117, 0.35);
+  --spartan-btn-primary-text: #05080E;
 
   /* Accent Color Palette */
   --spartan-cyan: #00D4FF;
@@ -46,18 +111,28 @@
   --spartan-border-light: rgba(255, 255, 255, 0.12);
   --spartan-border-medium: rgba(255, 255, 255, 0.2);
   --spartan-border-active: rgba(0, 229, 117, 0.5);
-
-  /* Global Typography Standard: Open Sans */
-  --font-primary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-heading: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --spartan-overlay: rgba(5, 8, 14, 0.85);
 
   /* Shadows */
   --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.65);
   --shadow-tactical: 0 0 15px rgba(0, 229, 117, 0.15), 0 8px 32px rgba(0, 0, 0, 0.7);
+
+  /* Scrollbar */
+  --scrollbar-track: #080B10;
+  --scrollbar-thumb: #253144;
+  --scrollbar-thumb-hover: #00E575;
+}
+
+/* --------------------------------------------------------------------------
+   SHARED GLOBAL TYPOGRAPHY & LAYOUT TOKENS
+   -------------------------------------------------------------------------- */
+:root {
+  --font-primary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Radii */
   --radius-xs: 4px;
@@ -92,6 +167,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* Typography Defaults */
@@ -135,20 +211,20 @@ button, input, select, textarea {
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--spartan-bg-base);
+  background: var(--scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
-  background: #253144;
+  background: var(--scrollbar-thumb);
   border-radius: var(--radius-full);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--spartan-green);
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* Tactical Selection */
 ::selection {
   background: var(--spartan-green);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 /* Base Utility Classes */
@@ -157,7 +233,7 @@ button, input, select, textarea {
 }
 
 .text-gradient-green {
-  background: linear-gradient(135deg, #00FF87 0%, #60EFFF 100%);
+  background: linear-gradient(135deg, var(--spartan-green) 0%, var(--spartan-cyan) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -185,29 +261,29 @@ button, input, select, textarea {
 .spartan-badge-cyan {
   background: var(--spartan-cyan-dim);
   color: var(--spartan-cyan);
-  border-color: rgba(0, 212, 255, 0.3);
+  border-color: rgba(2, 132, 199, 0.25);
 }
 
 .spartan-badge-amber {
   background: var(--spartan-amber-dim);
   color: var(--spartan-amber);
-  border-color: rgba(255, 176, 32, 0.3);
+  border-color: rgba(217, 119, 6, 0.25);
 }
 
 .spartan-badge-red {
   background: var(--spartan-red-dim);
   color: var(--spartan-red);
-  border-color: rgba(255, 68, 68, 0.3);
+  border-color: rgba(220, 38, 38, 0.25);
 }
 
 .spartan-badge-purple {
   background: var(--spartan-purple-dim);
   color: var(--spartan-purple);
-  border-color: rgba(168, 85, 247, 0.3);
+  border-color: rgba(147, 51, 234, 0.25);
 }
 
 .spartan-badge-muted {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--spartan-bg-card-hover);
   color: var(--spartan-text-secondary);
   border-color: var(--spartan-border-subtle);
 }
@@ -232,7 +308,7 @@ button, input, select, textarea {
 .spartan-card.interactive:hover {
   transform: translateY(-2px);
   border-color: var(--spartan-green-border);
-  box-shadow: 0 8px 24px rgba(0, 229, 117, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 158, 79, 0.08);
 }
 
 .spartan-card-header {
@@ -257,6 +333,7 @@ button, input, select, textarea {
   border: 1px solid var(--spartan-border-subtle);
   border-radius: var(--radius-lg);
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .spartan-table {
@@ -321,8 +398,8 @@ button, input, select, textarea {
 
 .btn-primary {
   background: var(--spartan-green);
-  color: #05080E;
-  box-shadow: 0 2px 10px rgba(0, 229, 117, 0.3);
+  color: var(--spartan-btn-primary-text);
+  box-shadow: 0 2px 8px rgba(0, 158, 79, 0.25);
   font-weight: 700;
 }
 
@@ -351,19 +428,19 @@ button, input, select, textarea {
 }
 
 .btn-ghost:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--spartan-bg-card-hover);
   color: var(--spartan-text-primary);
 }
 
 .btn-danger {
   background: var(--spartan-red-dim);
   color: var(--spartan-red);
-  border-color: rgba(255, 68, 68, 0.3);
+  border-color: rgba(220, 38, 38, 0.25);
   font-weight: 600;
 }
 
 .btn-danger:hover:not(:disabled) {
-  background: #FF4444;
+  background: var(--spartan-red);
   color: #FFFFFF;
 }
 
@@ -486,7 +563,7 @@ select.form-control {
 
 /* Glassmorphism Surface */
 .glass-panel {
-  background: rgba(20, 27, 38, 0.75);
+  background: var(--spartan-bg-glass);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--spartan-border-subtle);

@@ -47,7 +47,7 @@ export const WorkoutDetailModal = ({
             <StatusBadge status={workout.status} />
           </div>
 
-          <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#FFF' }}>{workout.name}</h3>
+          <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--spartan-text-primary)' }}>{workout.name}</h3>
           <p style={{ fontSize: '0.85rem', color: 'var(--spartan-text-secondary)', marginTop: '4px', lineHeight: 1.4 }}>
             {workout.description || workout.trainingObjective}
           </p>
@@ -101,9 +101,9 @@ export const WorkoutDetailModal = ({
                     {String(idx + 1).padStart(2, '0')}
                   </div>
                   <div>
-                    <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.9rem' }}>{step.name}</div>
+                    <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.9rem' }}>{step.name}</div>
                     <div style={{ fontSize: '0.75rem', color: 'var(--spartan-text-muted)' }}>
-                      Target Load: <span style={{ color: '#FFF' }}>{step.weight || 'Standard'}</span>
+                      Target Load: <span style={{ color: 'var(--spartan-text-primary)' }}>{step.weight || 'Standard'}</span>
                     </div>
                   </div>
                 </div>

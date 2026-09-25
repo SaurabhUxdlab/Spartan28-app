@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ToastProvider } from './context/ToastContext';
 import { FacilityProvider } from './context/FacilityContext';
@@ -97,13 +98,15 @@ function DashboardRouter() {
 
 export function App() {
   return (
-    <AuthProvider>
-      <FacilityProvider>
-        <ToastProvider>
-          <DashboardRouter />
-        </ToastProvider>
-      </FacilityProvider>
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <FacilityProvider>
+          <ToastProvider>
+            <DashboardRouter />
+          </ToastProvider>
+        </FacilityProvider>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 

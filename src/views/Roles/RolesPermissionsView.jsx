@@ -139,7 +139,7 @@ export const RolesPermissionsView = () => {
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <ShieldCheck size={20} style={{ color: 'var(--spartan-green)' }} />
           <div>
-            <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.9rem' }}>
+            <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.9rem' }}>
               Configurable Role-Based Access Control (RBAC)
             </div>
             <div style={{ fontSize: '0.75rem', color: 'var(--spartan-text-muted)' }}>
@@ -187,7 +187,7 @@ export const RolesPermissionsView = () => {
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span style={{ fontWeight: 800, color: '#FFF', fontSize: '0.95rem' }}>{role.name}</span>
+                  <span style={{ fontWeight: 800, color: 'var(--spartan-text-primary)', fontSize: '0.95rem' }}>{role.name}</span>
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--spartan-text-muted)' }}>
                     {role.usersCount} Staff
                   </span>
@@ -205,7 +205,7 @@ export const RolesPermissionsView = () => {
           <div className="spartan-card" style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <div style={{ borderBottom: '1px solid var(--spartan-border-subtle)', paddingBottom: '12px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#FFF' }}>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--spartan-text-primary)' }}>
                   {selectedRole.name} Permissions
                 </h3>
                 <div style={{ fontSize: '0.75rem', color: 'var(--spartan-text-muted)' }}>
@@ -240,7 +240,7 @@ export const RolesPermissionsView = () => {
                             cursor: 'pointer'
                           }}
                         >
-                          <span style={{ fontSize: '0.82rem', color: enabled ? '#FFF' : 'var(--spartan-text-secondary)', fontWeight: enabled ? 600 : 400 }}>
+                          <span style={{ fontSize: '0.82rem', color: enabled ? 'var(--spartan-text-primary)' : 'var(--spartan-text-secondary)', fontWeight: enabled ? 600 : 400 }}>
                             {item.label}
                           </span>
                           <input

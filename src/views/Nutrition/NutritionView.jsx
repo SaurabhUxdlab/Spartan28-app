@@ -82,7 +82,7 @@ export const NutritionView = ({ triggerAction }) => {
       sortable: true,
       render: (_, row) => (
         <div>
-          <div style={{ fontWeight: 700, color: '#FFF' }}>{row.name}</div>
+          <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)' }}>{row.name}</div>
           <div style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)' }}>{row.servingSize}</div>
         </div>
       )
@@ -155,7 +155,7 @@ export const NutritionView = ({ triggerAction }) => {
       sortable: true,
       render: (_, row) => (
         <div>
-          <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.9rem' }}>{row.name}</div>
+          <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.9rem' }}>{row.name}</div>
           <div style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)' }}>{row.description}</div>
         </div>
       )
@@ -170,7 +170,7 @@ export const NutritionView = ({ triggerAction }) => {
       header: 'Target Calories',
       key: 'calories',
       render: (_, row) => (
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#FFF' }}>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--spartan-text-primary)' }}>
           {row.targetCaloriesMin?.toLocaleString()} - {row.targetCaloriesMax?.toLocaleString()} kcal
         </span>
       )
@@ -187,7 +187,7 @@ export const NutritionView = ({ triggerAction }) => {
     {
       header: 'Author Coach',
       key: 'author',
-      render: (val) => <span style={{ fontSize: '0.8rem', color: '#FFF' }}>{val}</span>
+      render: (val) => <span style={{ fontSize: '0.8rem', color: 'var(--spartan-text-primary)' }}>{val}</span>
     },
     {
       header: 'Actions',

@@ -165,7 +165,7 @@ export const ScheduleCalendarView = () => {
             <span style={{
               fontSize: '1.15rem',
               fontWeight: 800,
-              color: '#FFFFFF',
+              color: 'var(--spartan-text-primary)',
               letterSpacing: '-0.01em',
               marginTop: '1px'
             }}>
@@ -320,7 +320,7 @@ export const ScheduleCalendarView = () => {
                   <span style={{
                     fontSize: '1.45rem',
                     fontWeight: 800,
-                    color: isToday ? 'var(--spartan-green)' : '#FFFFFF',
+                    color: isToday ? 'var(--spartan-green)' : 'var(--spartan-text-primary)',
                     lineHeight: 1.1,
                     letterSpacing: '-0.02em'
                   }}>
@@ -446,7 +446,7 @@ export const ScheduleCalendarView = () => {
                       <h4 style={{
                         fontSize: '0.86rem',
                         fontWeight: 700,
-                        color: '#FFFFFF',
+                        color: 'var(--spartan-text-primary)',
                         lineHeight: 1.25,
                         margin: '1px 0 0 0'
                       }}>
@@ -487,7 +487,7 @@ export const ScheduleCalendarView = () => {
                       <div style={{
                         fontSize: '0.71rem',
                         fontWeight: 600,
-                        color: '#FFFFFF',
+                        color: 'var(--spartan-text-primary)',
                         display: 'flex',
                         alignItems: 'center',
                         gap: '5px',

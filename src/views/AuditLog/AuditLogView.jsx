@@ -40,7 +40,7 @@ export const AuditLogView = () => {
       sortable: true,
       render: (val, row) => (
         <div>
-          <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.85rem' }}>{val}</div>
+          <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.85rem' }}>{val}</div>
           <div style={{ fontSize: '0.7rem', color: 'var(--spartan-green)', fontFamily: 'var(--font-mono)' }}>
             {row.role}
           </div>
@@ -52,7 +52,7 @@ export const AuditLogView = () => {
       key: 'action',
       sortable: true,
       render: (val) => (
-        <span style={{ fontWeight: 600, color: '#FFF', fontSize: '0.85rem' }}>
+        <span style={{ fontWeight: 600, color: 'var(--spartan-text-primary)', fontSize: '0.85rem' }}>
           {val}
         </span>
       )
@@ -86,7 +86,7 @@ export const AuditLogView = () => {
       key: 'timestamp',
       sortable: true,
       render: (val) => (
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#FFF' }}>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--spartan-text-primary)' }}>
           {val}
         </span>
       )
@@ -109,7 +109,7 @@ export const AuditLogView = () => {
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <History size={20} style={{ color: 'var(--spartan-cyan)' }} />
           <div>
-            <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.9rem' }}>
+            <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.9rem' }}>
               Immutable Administrative Audit Log
             </div>
             <div style={{ fontSize: '0.75rem', color: 'var(--spartan-text-muted)' }}>

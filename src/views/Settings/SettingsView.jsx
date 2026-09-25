@@ -67,7 +67,7 @@ export const SettingsView = () => {
       {/* Top Banner */}
       <div className="spartan-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.25rem 1.5rem' }}>
         <div>
-          <h3 style={{ fontSize: '1.2rem', color: '#FFF' }}>Spartan Facility & System Settings</h3>
+          <h3 style={{ fontSize: '1.2rem', color: 'var(--spartan-text-primary)' }}>Spartan Facility & System Settings</h3>
           <p style={{ fontSize: '0.8rem', color: 'var(--spartan-text-muted)', marginTop: '2px' }}>
             Configure operational policies, Spartan Flex cancellation rules, and cloud infrastructure
           </p>
@@ -116,7 +116,7 @@ export const SettingsView = () => {
               {(settings.locations || []).map((loc, idx) => (
                 <div key={loc.id || idx} style={{ background: 'var(--spartan-bg-surface)', padding: '10px 14px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--spartan-border-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <div>
-                    <span style={{ fontWeight: 700, color: '#FFF' }}>{loc.name}</span>
+                    <span style={{ fontWeight: 700, color: 'var(--spartan-text-primary)' }}>{loc.name}</span>
                     <span style={{ fontSize: '0.75rem', color: 'var(--spartan-text-muted)', marginLeft: '8px' }}>{loc.address}</span>
                   </div>
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--spartan-cyan)' }}>
@@ -192,7 +192,7 @@ export const SettingsView = () => {
           <div style={{ background: 'var(--spartan-bg-surface)', padding: '14px', borderRadius: 'var(--radius-md)', border: '1px solid var(--spartan-border-subtle)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
               <span style={{ color: 'var(--spartan-text-muted)' }}>Backend Architecture</span>
-              <span style={{ color: '#FFF', fontWeight: 600 }}>Firebase (Auth + Cloud Firestore + Storage)</span>
+              <span style={{ color: 'var(--spartan-text-primary)', fontWeight: 600 }}>Firebase (Auth + Cloud Firestore + Storage)</span>
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>

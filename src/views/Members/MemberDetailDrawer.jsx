@@ -131,7 +131,7 @@ export const MemberDetailDrawer = ({
           />
           <div style={{ flex: 1 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-              <h3 style={{ color: '#FFF', fontSize: '1.2rem', fontWeight: 800 }}>{member.name}</h3>
+              <h3 style={{ color: 'var(--spartan-text-primary)', fontSize: '1.2rem', fontWeight: 800 }}>{member.name}</h3>
               <StatusBadge status={member.status} />
               <span className="spartan-badge spartan-badge-cyan">{member.membershipPlan}</span>
             </div>
@@ -197,7 +197,7 @@ export const MemberDetailDrawer = ({
               </div>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div>
-                  <div style={{ fontWeight: 700, color: '#FFF' }}>{member.assignedCoachName || 'Ron Brezzell'}</div>
+                  <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)' }}>{member.assignedCoachName || 'Ron Brezzell'}</div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--spartan-text-muted)' }}>Head Coach Spartan Protocol</div>
                 </div>
                 <Button variant="secondary" size="sm" onClick={() => alert(`Assigned Coach: ${member.assignedCoachName || 'Ron Brezzell'}`)}>
@@ -241,19 +241,19 @@ export const MemberDetailDrawer = ({
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
                 <div style={{ background: 'var(--spartan-bg-surface)', padding: '10px', borderRadius: 'var(--radius-md)' }}>
                   <span style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)' }}>BACK SQUAT</span>
-                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#FFF' }}>{member.measurements?.prs?.squat || '365 lbs'}</div>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--spartan-text-primary)' }}>{member.measurements?.prs?.squat || '365 lbs'}</div>
                 </div>
                 <div style={{ background: 'var(--spartan-bg-surface)', padding: '10px', borderRadius: 'var(--radius-md)' }}>
                   <span style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)' }}>CONVENTIONAL DEADLIFT</span>
-                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#FFF' }}>{member.measurements?.prs?.deadlift || '445 lbs'}</div>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--spartan-text-primary)' }}>{member.measurements?.prs?.deadlift || '445 lbs'}</div>
                 </div>
                 <div style={{ background: 'var(--spartan-bg-surface)', padding: '10px', borderRadius: 'var(--radius-md)' }}>
                   <span style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)' }}>BENCH PRESS</span>
-                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#FFF' }}>{member.measurements?.prs?.bench || '285 lbs'}</div>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--spartan-text-primary)' }}>{member.measurements?.prs?.bench || '285 lbs'}</div>
                 </div>
                 <div style={{ background: 'var(--spartan-bg-surface)', padding: '10px', borderRadius: 'var(--radius-md)' }}>
                   <span style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)' }}>OVERHEAD PRESS</span>
-                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#FFF' }}>{member.measurements?.prs?.overheadPress || '185 lbs'}</div>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--spartan-text-primary)' }}>{member.measurements?.prs?.overheadPress || '185 lbs'}</div>
                 </div>
               </div>
             </div>
@@ -272,11 +272,11 @@ export const MemberDetailDrawer = ({
                 <StatusBadge status={member.membershipStatus || 'Active'} />
               </div>
 
-              <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#FFF', marginBottom: '4px' }}>
+              <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--spartan-text-primary)', marginBottom: '4px' }}>
                 {member.membershipPlan}
               </div>
               <p style={{ fontSize: '0.78rem', color: 'var(--spartan-text-muted)' }}>
-                Next scheduled renewal on <span style={{ color: '#FFF', fontWeight: 600 }}>{member.planRenewalDate || '2026-10-24'}</span>
+                Next scheduled renewal on <span style={{ color: 'var(--spartan-text-primary)', fontWeight: 600 }}>{member.planRenewalDate || '2026-10-24'}</span>
               </p>
 
               <div style={{ borderTop: '1px solid var(--spartan-border-subtle)', marginTop: '12px', paddingTop: '12px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>

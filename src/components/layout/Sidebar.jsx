@@ -206,8 +206,8 @@ export const Sidebar = ({ activeTab, onSelectTab, isCollapsed, onToggleCollapse 
                   }}
                   onMouseEnter={(e) => {
                     if (!isActive) {
-                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.04)';
-                      e.currentTarget.style.color = '#FFF';
+                      e.currentTarget.style.background = 'var(--spartan-bg-card-hover)';
+                      e.currentTarget.style.color = 'var(--spartan-text-primary)';
                     }
                   }}
                   onMouseLeave={(e) => {
@@ -272,7 +272,7 @@ export const Sidebar = ({ activeTab, onSelectTab, isCollapsed, onToggleCollapse 
           />
           {!isCollapsed && (
             <div style={{ overflow: 'hidden' }}>
-              <div style={{ fontSize: '0.82rem', fontWeight: 700, color: '#FFF', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
+              <div style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--spartan-text-primary)', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
                 {user?.name}
               </div>
               <div style={{ fontSize: '0.68rem', color: 'var(--spartan-green)', fontFamily: 'var(--font-mono)', fontWeight: 600 }}>

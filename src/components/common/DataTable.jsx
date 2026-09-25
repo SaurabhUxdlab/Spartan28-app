@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, ChevronLeft, ChevronRight, ArrowUpDown, Filter, SlidersHorizontal } from 'lucide-react';
+import { Search, ChevronLeft, ChevronRight, ArrowUpDown } from 'lucide-react';
 import { EmptyState } from './EmptyState';
 import { LoadingSpinner } from './LoadingSpinner';
 import { Button } from './Button';
@@ -9,7 +9,7 @@ export const DataTable = ({
   data = [],
   searchKey,
   searchPlaceholder = 'Search records...',
-  filterOptions = [], // [{ key: 'status', label: 'Status', options: ['All', 'Active', 'Paused'] }]
+  filterOptions = [],
   loading = false,
   emptyTitle = 'No data available',
   emptyDescription = 'No records match your criteria.',
@@ -238,11 +238,11 @@ export const DataTable = ({
             }}
           >
             <div>
-              Showing <span style={{ color: '#FFF', fontWeight: 600 }}>{(currentPage - 1) * pageSize + 1}</span> to{' '}
-              <span style={{ color: '#FFF', fontWeight: 600 }}>
+              Showing <span style={{ color: 'var(--spartan-text-primary)', fontWeight: 600 }}>{(currentPage - 1) * pageSize + 1}</span> to{' '}
+              <span style={{ color: 'var(--spartan-text-primary)', fontWeight: 600 }}>
                 {Math.min(currentPage * pageSize, sortedData.length)}
               </span>{' '}
-              of <span style={{ color: '#FFF', fontWeight: 600 }}>{sortedData.length}</span> entries
+              of <span style={{ color: 'var(--spartan-text-primary)', fontWeight: 600 }}>{sortedData.length}</span> entries
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -254,7 +254,7 @@ export const DataTable = ({
               >
                 <ChevronLeft size={14} />
               </Button>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: '#FFF' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: 'var(--spartan-text-primary)' }}>
                 Page {currentPage} of {totalPages}
               </span>
               <Button

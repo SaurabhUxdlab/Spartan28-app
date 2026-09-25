@@ -75,7 +75,7 @@ export const OverviewView = ({ onNavigate }) => {
       <div
         className="spartan-card"
         style={{
-          background: 'linear-gradient(135deg, rgba(0, 229, 117, 0.12) 0%, rgba(20, 27, 38, 0.95) 100%)',
+          background: 'linear-gradient(135deg, var(--spartan-green-dim) 0%, var(--spartan-bg-card) 100%)',
           border: '1px solid var(--spartan-green-border)',
           display: 'flex',
           alignItems: 'center',
@@ -92,7 +92,7 @@ export const OverviewView = ({ onNavigate }) => {
               SPARTAN PROTOCOL SYSTEM ACTIVE
             </span>
           </div>
-          <h1 style={{ fontSize: '1.75rem', color: '#FFF', fontWeight: 900 }}>
+          <h1 style={{ fontSize: '1.75rem', color: 'var(--spartan-text-primary)', fontWeight: 900 }}>
             COMMAND HQ // <span className="text-gradient-green">{user?.name?.toUpperCase() || 'RON BREZZELL'}</span>
           </h1>
           <p style={{ fontSize: '0.85rem', color: 'var(--spartan-text-secondary)', marginTop: '4px' }}>
@@ -223,7 +223,7 @@ export const OverviewView = ({ onNavigate }) => {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Flame size={16} style={{ color: 'var(--spartan-amber)' }} />
-              <span style={{ fontSize: '0.78rem', color: '#FFF', fontWeight: 600 }}>Top Cadence Streak</span>
+              <span style={{ fontSize: '0.78rem', color: 'var(--spartan-text-primary)', fontWeight: 600 }}>Top Cadence Streak</span>
             </div>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--spartan-amber)', fontWeight: 700 }}>
               19 Days (Chloe B.)
@@ -276,7 +276,7 @@ export const OverviewView = ({ onNavigate }) => {
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span style={{ fontWeight: 700, color: '#FFF', fontSize: '0.9rem' }}>{cls.name}</span>
+                    <span style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.9rem' }}>{cls.name}</span>
                     <StatusBadge status={cls.status} />
                   </div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--spartan-text-muted)', marginTop: '3px' }}>
@@ -337,7 +337,7 @@ export const OverviewView = ({ onNavigate }) => {
                 }}
               >
                 <div>
-                  <div style={{ fontWeight: 600, color: '#FFF', fontSize: '0.85rem' }}>{bk.memberName}</div>
+                  <div style={{ fontWeight: 600, color: 'var(--spartan-text-primary)', fontSize: '0.85rem' }}>{bk.memberName}</div>
                   <div style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)' }}>
                     {bk.className} • {bk.bookingDate}
                   </div>

@@ -5,7 +5,7 @@ export const TacticalAreaChart = ({
   xKey = 'month',
   yKey = 'revenue',
   height = 200,
-  accentColor = '#00E575',
+  accentColor = 'var(--spartan-green)',
   gradientId = 'greenGlow',
   formatValue = (v) => `$${v.toLocaleString()}`
 }) => {
@@ -46,7 +46,7 @@ export const TacticalAreaChart = ({
       >
         <defs>
           <linearGradient id={gradientId} x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor={accentColor} stopOpacity="0.35" />
+            <stop offset="0%" stopColor={accentColor} stopOpacity="0.3" />
             <stop offset="100%" stopColor={accentColor} stopOpacity="0.0" />
           </linearGradient>
         </defs>
@@ -62,7 +62,7 @@ export const TacticalAreaChart = ({
                 y1={y}
                 x2={width - padding}
                 y2={y}
-                stroke="rgba(255, 255, 255, 0.06)"
+                stroke="var(--spartan-border-subtle)"
                 strokeDasharray="4 4"
               />
               <text
@@ -99,7 +99,7 @@ export const TacticalAreaChart = ({
               cx={pt.x}
               cy={pt.y}
               r={hoveredPoint?.index === i ? 6 : 3.5}
-              fill="#0A0D14"
+              fill="var(--spartan-bg-card)"
               stroke={accentColor}
               strokeWidth="2"
               style={{ cursor: 'pointer', transition: 'all 0.15s ease' }}
@@ -132,7 +132,7 @@ export const TacticalAreaChart = ({
             border: `1px solid ${accentColor}`,
             padding: '6px 10px',
             borderRadius: 'var(--radius-sm)',
-            boxShadow: '0 4px 15px rgba(0,0,0,0.8)',
+            boxShadow: 'var(--shadow-md)',
             pointerEvents: 'none',
             fontSize: '0.75rem',
             fontFamily: 'var(--font-mono)',
@@ -143,7 +143,7 @@ export const TacticalAreaChart = ({
           <div style={{ color: 'var(--spartan-text-muted)', fontSize: '0.7rem' }}>
             {hoveredPoint.data[xKey]}
           </div>
-          <div style={{ color: '#FFF', fontWeight: 700, marginTop: '2px' }}>
+          <div style={{ color: 'var(--spartan-text-primary)', fontWeight: 700, marginTop: '2px' }}>
             {formatValue(hoveredPoint.data[yKey])}
           </div>
         </div>

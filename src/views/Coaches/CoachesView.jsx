@@ -97,7 +97,7 @@ export const CoachesView = ({ triggerAction }) => {
             }}
           />
           <div>
-            <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.88rem' }}>
+            <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.88rem' }}>
               {row.name}
             </div>
             <div style={{ fontSize: '0.74rem', color: 'var(--spartan-text-muted)', marginTop: '1px' }}>
@@ -160,7 +160,7 @@ export const CoachesView = ({ triggerAction }) => {
       sortable: true,
       render: (_, row) => (
         <div>
-          <div style={{ fontSize: '0.84rem', fontWeight: 700, color: '#FFF', display: 'flex', alignItems: 'center', gap: '5px' }}>
+          <div style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--spartan-text-primary)', display: 'flex', alignItems: 'center', gap: '5px' }}>
             <CalendarDays size={13} style={{ color: 'var(--spartan-cyan)' }} />
             <span>{row.activeClasses || 0} Classes</span>
           </div>

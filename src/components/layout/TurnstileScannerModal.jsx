@@ -101,7 +101,7 @@ export const TurnstileScannerModal = ({ isOpen, onClose }) => {
               <QrCode size={28} />
             </div>
           </div>
-          <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#FFF' }}>
+          <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--spartan-text-primary)' }}>
             SCAN-ID NFC RECEIVER
           </div>
           <p style={{ fontSize: '0.78rem', color: 'var(--spartan-text-muted)', marginTop: '4px' }}>
@@ -176,7 +176,7 @@ export const TurnstileScannerModal = ({ isOpen, onClose }) => {
                 />
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <span style={{ fontWeight: 800, color: '#FFF' }}>{scannedResult.member.name}</span>
+                    <span style={{ fontWeight: 800, color: 'var(--spartan-text-primary)' }}>{scannedResult.member.name}</span>
                     <span className="spartan-badge spartan-badge-green" style={{ fontSize: '0.62rem' }}>
                       ACCESS GRANTED
                     </span>

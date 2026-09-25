@@ -77,7 +77,7 @@ export const BookingsView = () => {
       sortable: true,
       render: (_, row) => (
         <div>
-          <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.88rem' }}>{row.memberName}</div>
+          <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.88rem' }}>{row.memberName}</div>
           <div style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)' }}>{row.memberEmail}</div>
         </div>
       )
@@ -86,7 +86,7 @@ export const BookingsView = () => {
       header: 'Class / Session',
       key: 'className',
       sortable: true,
-      render: (val) => <div style={{ color: '#FFF', fontWeight: 600 }}>{val}</div>
+      render: (val) => <div style={{ color: 'var(--spartan-text-primary)', fontWeight: 600 }}>{val}</div>
     },
     {
       header: 'Date & Time',

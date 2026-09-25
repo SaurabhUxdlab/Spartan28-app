@@ -73,7 +73,7 @@ export const ClassesView = ({ triggerAction }) => {
       sortable: true,
       render: (_, row) => (
         <div>
-          <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.9rem' }}>{row.name}</div>
+          <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.9rem' }}>{row.name}</div>
           <div style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)' }}>{row.category}</div>
         </div>
       )
@@ -83,7 +83,7 @@ export const ClassesView = ({ triggerAction }) => {
       key: 'time',
       render: (_, row) => (
         <div>
-          <div style={{ fontSize: '0.82rem', color: '#FFF', fontWeight: 600 }}>
+          <div style={{ fontSize: '0.82rem', color: 'var(--spartan-text-primary)', fontWeight: 600 }}>
             {row.dayOfWeek} • {row.startTime}
           </div>
           <div style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)' }}>
@@ -107,7 +107,7 @@ export const ClassesView = ({ triggerAction }) => {
       key: 'coachName',
       sortable: true,
       render: (val) => (
-        <div style={{ fontSize: '0.82rem', color: '#FFF', fontWeight: 600 }}>
+        <div style={{ fontSize: '0.82rem', color: 'var(--spartan-text-primary)', fontWeight: 600 }}>
           {val}
         </div>
       )

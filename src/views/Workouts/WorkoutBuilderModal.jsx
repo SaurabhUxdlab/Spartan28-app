@@ -243,7 +243,7 @@ export const WorkoutBuilderModal = ({
         <div style={{ marginTop: '1.25rem', borderTop: '1px solid var(--spartan-border-subtle)', paddingTop: '1.25rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
             <div>
-              <h4 style={{ fontSize: '0.95rem', color: '#FFF' }}>Exercise Sequence ({formData.exercisesSequence.length} Exercises)</h4>
+              <h4 style={{ fontSize: '0.95rem', color: 'var(--spartan-text-primary)' }}>Exercise Sequence ({formData.exercisesSequence.length} Exercises)</h4>
               <p style={{ fontSize: '0.75rem', color: 'var(--spartan-text-muted)' }}>
                 Set target sets, reps, load, and rest timer per station
               </p>
@@ -302,7 +302,7 @@ export const WorkoutBuilderModal = ({
                 </div>
 
                 <div style={{ flex: 1.5 }}>
-                  <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.85rem' }}>{step.name}</div>
+                  <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.85rem' }}>{step.name}</div>
                   <div style={{ fontSize: '0.7rem', color: 'var(--spartan-text-muted)', fontFamily: 'var(--font-mono)' }}>
                     ID: {step.exerciseId}
                   </div>

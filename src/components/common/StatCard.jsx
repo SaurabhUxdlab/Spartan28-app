@@ -19,10 +19,10 @@ export const StatCard = ({
   const isDown = trend === 'down';
 
   const glowColor = 
-    colorVariant === 'green' ? 'rgba(0, 229, 117, 0.15)' :
-    colorVariant === 'cyan' ? 'rgba(0, 212, 255, 0.15)' :
-    colorVariant === 'amber' ? 'rgba(255, 176, 32, 0.15)' :
-    colorVariant === 'purple' ? 'rgba(168, 85, 247, 0.15)' : 'rgba(59, 130, 246, 0.15)';
+    colorVariant === 'green' ? 'var(--spartan-green-dim)' :
+    colorVariant === 'cyan' ? 'var(--spartan-cyan-dim)' :
+    colorVariant === 'amber' ? 'var(--spartan-amber-dim)' :
+    colorVariant === 'purple' ? 'var(--spartan-purple-dim)' : 'var(--spartan-blue-dim)';
 
   const accentColor = 
     colorVariant === 'green' ? 'var(--spartan-green)' :
@@ -49,7 +49,7 @@ export const StatCard = ({
           right: '15%',
           height: '2px',
           background: `linear-gradient(90deg, transparent, ${accentColor}, transparent)`,
-          opacity: 0.7
+          opacity: 0.8
         }}
       />
 
@@ -87,7 +87,7 @@ export const StatCard = ({
           fontWeight: 800,
           fontFamily: 'var(--font-heading)',
           letterSpacing: '-0.02em',
-          color: '#FFF'
+          color: 'var(--spartan-text-primary)'
         }}>
           {prefix}{value}{suffix}
         </span>

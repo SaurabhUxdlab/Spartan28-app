@@ -109,7 +109,7 @@ export const QuickActionModal = ({ isOpen, onClose, onSelectAction }) => {
                 <Icon size={20} />
               </div>
               <div>
-                <div style={{ fontWeight: 700, fontSize: '0.88rem', color: '#FFF' }}>{act.title}</div>
+                <div style={{ fontWeight: 700, fontSize: '0.88rem', color: 'var(--spartan-text-primary)' }}>{act.title}</div>
                 <div style={{ fontSize: '0.74rem', color: 'var(--spartan-text-muted)', marginTop: '2px', lineHeight: 1.3 }}>
                   {act.description}
                 </div>

@@ -62,7 +62,7 @@ export const ExercisesView = () => {
             style={{ width: '44px', height: '44px', borderRadius: 'var(--radius-sm)', objectFit: 'cover', border: '1px solid var(--spartan-border-subtle)' }}
           />
           <div>
-            <div style={{ fontWeight: 700, color: '#FFF' }}>{row.name}</div>
+            <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)' }}>{row.name}</div>
             <div style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)' }}>
               Target: <span style={{ color: 'var(--spartan-green)' }}>{row.targetMuscle}</span>
             </div>

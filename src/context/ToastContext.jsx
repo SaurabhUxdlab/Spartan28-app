@@ -74,7 +74,7 @@ export const ToastProvider = ({ children }) => {
 
               <div style={{ flex: 1, minWidth: 0 }}>
                 {toast.title && (
-                  <div style={{ fontWeight: 700, fontSize: '0.85rem', color: '#FFF', marginBottom: '2px' }}>
+                  <div style={{ fontWeight: 700, fontSize: '0.85rem', color: 'var(--spartan-text-primary)', marginBottom: '2px' }}>
                     {toast.title}
                   </div>
                 )}

@@ -39,7 +39,7 @@ export const EmptyState = ({
           <Icon size={26} />
         </div>
       )}
-      <h3 style={{ fontSize: '1.1rem', marginBottom: '6px', color: '#FFF' }}>{title}</h3>
+      <h3 style={{ fontSize: '1.1rem', marginBottom: '6px', color: 'var(--spartan-text-primary)' }}>{title}</h3>
       <p style={{ fontSize: '0.85rem', color: 'var(--spartan-text-muted)', marginBottom: actionText ? '1.25rem' : 0, maxWidth: '380px' }}>
         {description}
       </p>

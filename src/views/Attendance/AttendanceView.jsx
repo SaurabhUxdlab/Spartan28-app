@@ -54,7 +54,7 @@ export const AttendanceView = () => {
       sortable: true,
       render: (_, row) => (
         <div>
-          <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.88rem' }}>{row.memberName}</div>
+          <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.88rem' }}>{row.memberName}</div>
           <div style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)', fontFamily: 'var(--font-mono)' }}>
             Pass ID: {row.scanId || row.memberId}
           </div>
@@ -65,7 +65,7 @@ export const AttendanceView = () => {
       header: 'Class / Protocol',
       key: 'className',
       sortable: true,
-      render: (val) => <span style={{ color: '#FFF', fontWeight: 600 }}>{val || 'Open Facility Access'}</span>
+      render: (val) => <span style={{ color: 'var(--spartan-text-primary)', fontWeight: 600 }}>{val || 'Open Facility Access'}</span>
     },
     {
       header: 'Gate / Location',
@@ -81,7 +81,7 @@ export const AttendanceView = () => {
       key: 'checkInTime',
       sortable: true,
       render: (val) => (
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: '#FFF' }}>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: 'var(--spartan-text-primary)' }}>
           ⏱️ {val}
         </span>
       )
@@ -142,7 +142,7 @@ export const AttendanceView = () => {
           </div>
           <div>
             <div style={{ fontSize: '0.75rem', color: 'var(--spartan-text-muted)', fontFamily: 'var(--font-mono)' }}>PRESENT ATHLETES TODAY</div>
-            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#FFF' }}>
+            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--spartan-text-primary)' }}>
               {logs.filter(l => l.status === 'Present').length} Checked-In
             </div>
           </div>
@@ -154,7 +154,7 @@ export const AttendanceView = () => {
           </div>
           <div>
             <div style={{ fontSize: '0.75rem', color: 'var(--spartan-text-muted)', fontFamily: 'var(--font-mono)' }}>NO-SHOW RATE</div>
-            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#FFF' }}>
+            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--spartan-text-primary)' }}>
               {logs.filter(l => l.status === 'No-Show').length} Records (3.2%)
             </div>
           </div>

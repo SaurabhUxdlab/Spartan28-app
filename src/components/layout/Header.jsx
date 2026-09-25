@@ -7,10 +7,13 @@ import {
   Database, 
   ChevronDown, 
   Check, 
-  RefreshCw
+  RefreshCw,
+  Sun,
+  Moon
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useFacility } from '../../context/FacilityContext';
+import { useTheme } from '../../context/ThemeContext';
 import { isFirebaseConfigured } from '../../firebase/config';
 import { dbService } from '../../firebase/firestoreHelper';
 import { Button } from '../common/Button';
@@ -24,6 +27,7 @@ export const Header = ({
 }) => {
   const { user, switchRole, demoAccounts } = useAuth();
   const { activeFacility, setActiveFacility, facilities } = useFacility();
+  const { theme, toggleTheme, isDark } = useTheme();
   const [showRoleMenu, setShowRoleMenu] = useState(false);
   const [showFacilityMenu, setShowFacilityMenu] = useState(false);
 
@@ -47,7 +51,8 @@ export const Header = ({
         top: 0,
         zIndex: 90,
         gap: '1rem',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        transition: 'background-color 0.25s ease, border-color 0.25s ease'
       }}
     >
       {/* Left: Page Title & Breadcrumb */}
@@ -63,7 +68,7 @@ export const Header = ({
             SPARTAN HQ / {breadcrumb}
           </span>
         </div>
-        <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#FFF', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>
+        <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--spartan-text-primary)', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>
           {activeTitle}
         </h2>
         {activeSubtitle && (
@@ -74,7 +79,7 @@ export const Header = ({
       </div>
 
       {/* Right Controls */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
         {/* Facility Location Switcher */}
         <div style={{ position: 'relative' }}>
           <button
@@ -107,7 +112,7 @@ export const Header = ({
                 background: 'var(--spartan-bg-card)',
                 border: '1px solid var(--spartan-border-light)',
                 borderRadius: 'var(--radius-md)',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.8)',
+                boxShadow: 'var(--shadow-lg)',
                 zIndex: 100,
                 overflow: 'hidden',
                 padding: '4px 0'
@@ -173,8 +178,8 @@ export const Header = ({
             alignItems: 'center',
             gap: '6px',
             padding: '4px 10px',
-            background: isFirebaseConfigured ? 'var(--spartan-green-dim)' : 'rgba(0, 212, 255, 0.1)',
-            border: `1px solid ${isFirebaseConfigured ? 'var(--spartan-green-border)' : 'rgba(0, 212, 255, 0.3)'}`,
+            background: isFirebaseConfigured ? 'var(--spartan-green-dim)' : 'rgba(2, 132, 199, 0.1)',
+            border: `1px solid ${isFirebaseConfigured ? 'var(--spartan-green-border)' : 'rgba(2, 132, 199, 0.25)'}`,
             borderRadius: 'var(--radius-full)',
             fontSize: '0.72rem',
             fontFamily: 'var(--font-mono)',
@@ -185,6 +190,38 @@ export const Header = ({
           <Database size={12} />
           <span>{isFirebaseConfigured ? 'Firebase Live' : 'Demo DB'}</span>
         </div>
+
+        {/* Theme Switcher Toggle */}
+        <button
+          onClick={toggleTheme}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+            padding: '0.45rem 0.8rem',
+            borderRadius: 'var(--radius-md)',
+            background: 'var(--spartan-bg-card)',
+            border: '1px solid var(--spartan-border-subtle)',
+            color: 'var(--spartan-text-primary)',
+            fontSize: '0.78rem',
+            fontWeight: 600,
+            cursor: 'pointer',
+            transition: 'all 0.15s ease'
+          }}
+          title={`Switch to ${isDark ? 'Light' : 'Dark'} Theme`}
+        >
+          {isDark ? (
+            <>
+              <Moon size={13} style={{ color: 'var(--spartan-cyan)' }} />
+              <span>Dark</span>
+            </>
+          ) : (
+            <>
+              <Sun size={13} style={{ color: 'var(--spartan-amber)' }} />
+              <span>Light</span>
+            </>
+          )}
+        </button>
 
         {/* Role Switcher Menu */}
         <div style={{ position: 'relative' }}>
@@ -202,7 +239,7 @@ export const Header = ({
             }}
           >
             <Shield size={14} style={{ color: 'var(--spartan-green)' }} />
-            <span style={{ fontSize: '0.78rem', color: '#FFF', fontWeight: 600 }}>{user?.role}</span>
+            <span style={{ fontSize: '0.78rem', color: 'var(--spartan-text-primary)', fontWeight: 600 }}>{user?.role}</span>
             <ChevronDown size={12} style={{ color: 'var(--spartan-text-muted)' }} />
           </button>
 
@@ -216,7 +253,7 @@ export const Header = ({
                 background: 'var(--spartan-bg-card)',
                 border: '1px solid var(--spartan-border-light)',
                 borderRadius: 'var(--radius-md)',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.8)',
+                boxShadow: 'var(--shadow-lg)',
                 zIndex: 100,
                 overflow: 'hidden',
                 padding: '6px 0'
@@ -247,7 +284,7 @@ export const Header = ({
                   }}
                 >
                   <div>
-                    <div style={{ fontWeight: 600, color: '#FFF' }}>{acc.role}</div>
+                    <div style={{ fontWeight: 600, color: 'var(--spartan-text-primary)' }}>{acc.role}</div>
                     <div style={{ fontSize: '0.7rem', color: 'var(--spartan-text-muted)' }}>{acc.name} ({acc.title})</div>
                   </div>
                   {user?.role === acc.role && <Check size={14} />}

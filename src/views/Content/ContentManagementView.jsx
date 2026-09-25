@@ -65,7 +65,7 @@ export const ContentManagementView = () => {
       sortable: true,
       render: (_, row) => (
         <div>
-          <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.88rem' }}>{row.title}</div>
+          <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.88rem' }}>{row.title}</div>
           <div style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)', maxWidth: '320px', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
             "{row.body}"
           </div>
@@ -94,7 +94,7 @@ export const ContentManagementView = () => {
     {
       header: 'Author',
       key: 'author',
-      render: (val) => <span style={{ fontSize: '0.8rem', color: '#FFF' }}>{val}</span>
+      render: (val) => <span style={{ fontSize: '0.8rem', color: 'var(--spartan-text-primary)' }}>{val}</span>
     },
     {
       header: 'Published Date',

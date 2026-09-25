@@ -57,7 +57,7 @@ export const PaymentsView = () => {
       sortable: true,
       render: (_, row) => (
         <div>
-          <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.88rem' }}>{row.memberName}</div>
+          <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.88rem' }}>{row.memberName}</div>
           <div style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)' }}>{row.memberEmail}</div>
         </div>
       )
@@ -66,7 +66,7 @@ export const PaymentsView = () => {
       header: 'Item / Allocation',
       key: 'item',
       sortable: true,
-      render: (val) => <span style={{ color: '#FFF', fontWeight: 600 }}>{val}</span>
+      render: (val) => <span style={{ color: 'var(--spartan-text-primary)', fontWeight: 600 }}>{val}</span>
     },
     {
       header: 'Amount ($ USD)',
@@ -92,7 +92,7 @@ export const PaymentsView = () => {
       header: 'Timestamp',
       key: 'date',
       sortable: true,
-      render: (val) => <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#FFF' }}>{val}</span>
+      render: (val) => <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--spartan-text-primary)' }}>{val}</span>
     },
     {
       header: 'Status',
@@ -148,7 +148,7 @@ export const PaymentsView = () => {
             </span>
             <span className="spartan-badge spartan-badge-cyan">GENERIC VAULT</span>
           </div>
-          <div style={{ fontSize: '1.2rem', fontWeight: 700, color: '#FFF' }}>
+          <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--spartan-text-primary)' }}>
             Apple Pay • Visa • Spartan Black
           </div>
           <p style={{ fontSize: '0.75rem', color: 'var(--spartan-text-muted)', marginTop: '4px' }}>
@@ -164,7 +164,7 @@ export const PaymentsView = () => {
             </span>
             <span className="spartan-badge spartan-badge-amber">0.0%</span>
           </div>
-          <div style={{ fontSize: '1.85rem', fontWeight: 900, color: '#FFF', fontFamily: 'var(--font-heading)' }}>
+          <div style={{ fontSize: '1.85rem', fontWeight: 900, color: 'var(--spartan-text-primary)', fontFamily: 'var(--font-heading)' }}>
             0 Disputes
           </div>
           <p style={{ fontSize: '0.75rem', color: 'var(--spartan-text-muted)', marginTop: '4px' }}>

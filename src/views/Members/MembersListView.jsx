@@ -80,7 +80,7 @@ export const MembersListView = ({ triggerAction }) => {
             style={{ width: '38px', height: '38px', borderRadius: 'var(--radius-sm)', objectFit: 'cover', border: '1px solid var(--spartan-border-subtle)' }}
           />
           <div>
-            <div style={{ fontWeight: 700, color: '#FFF' }}>{row.name}</div>
+            <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)' }}>{row.name}</div>
             <div style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)', fontFamily: 'var(--font-mono)' }}>
               {row.scanId || row.id}
             </div>
@@ -113,7 +113,7 @@ export const MembersListView = ({ triggerAction }) => {
       key: 'assignedCoachName',
       sortable: true,
       render: (val) => (
-        <div style={{ fontSize: '0.82rem', color: '#FFF', fontWeight: 600 }}>
+        <div style={{ fontSize: '0.82rem', color: 'var(--spartan-text-primary)', fontWeight: 600 }}>
           {val || 'Ron Brezzell'}
         </div>
       )

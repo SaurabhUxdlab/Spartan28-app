@@ -34,7 +34,7 @@ export const Drawer = ({
         zIndex: 9999,
         display: 'flex',
         justifyContent: 'flex-end',
-        backgroundColor: 'rgba(5, 8, 14, 0.75)',
+        backgroundColor: 'var(--spartan-overlay, rgba(15, 23, 42, 0.6))',
         backdropFilter: 'blur(6px)',
         WebkitBackdropFilter: 'blur(6px)'
       }}
@@ -52,7 +52,7 @@ export const Drawer = ({
           height: '100vh',
           display: 'flex',
           flexDirection: 'column',
-          boxShadow: '-10px 0 40px rgba(0, 0, 0, 0.9)',
+          boxShadow: 'var(--shadow-lg)',
           overflow: 'hidden'
         }}
       >
@@ -68,7 +68,7 @@ export const Drawer = ({
           }}
         >
           <div>
-            <h3 style={{ fontSize: '1.2rem', color: '#FFF', fontWeight: 700 }}>{title}</h3>
+            <h3 style={{ fontSize: '1.2rem', color: 'var(--spartan-text-primary)', fontWeight: 700 }}>{title}</h3>
             {subtitle && (
               <p style={{ fontSize: '0.8rem', color: 'var(--spartan-text-muted)', marginTop: '2px' }}>
                 {subtitle}

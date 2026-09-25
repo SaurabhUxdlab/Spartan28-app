@@ -56,7 +56,7 @@ export const NotificationsView = ({ triggerAction }) => {
       sortable: true,
       render: (_, row) => (
         <div>
-          <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.88rem' }}>{row.title}</div>
+          <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.88rem' }}>{row.title}</div>
           <div style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)', maxWidth: '320px', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
             {row.message}
           </div>
@@ -83,7 +83,7 @@ export const NotificationsView = ({ triggerAction }) => {
       header: 'Delivery Timestamp',
       key: 'sentTime',
       sortable: true,
-      render: (val) => <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#FFF' }}>{val}</span>
+      render: (val) => <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--spartan-text-primary)' }}>{val}</span>
     },
     {
       header: 'Delivered',

@@ -36,7 +36,7 @@ export const Modal = ({
         alignItems: 'center',
         justifyContent: 'center',
         padding: '1rem',
-        backgroundColor: 'rgba(5, 8, 14, 0.85)',
+        backgroundColor: 'var(--spartan-overlay, rgba(15, 23, 42, 0.6))',
         backdropFilter: 'blur(8px)',
         WebkitBackdropFilter: 'blur(8px)'
       }}
@@ -55,7 +55,7 @@ export const Modal = ({
           maxHeight: '90vh',
           display: 'flex',
           flexDirection: 'column',
-          boxShadow: '0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 229, 117, 0.08)',
+          boxShadow: 'var(--shadow-lg)',
           overflow: 'hidden'
         }}
       >
@@ -71,7 +71,7 @@ export const Modal = ({
           }}
         >
           <div>
-            <h3 style={{ fontSize: '1.15rem', color: '#FFF', fontWeight: 700 }}>{title}</h3>
+            <h3 style={{ fontSize: '1.15rem', color: 'var(--spartan-text-primary)', fontWeight: 700 }}>{title}</h3>
             {subtitle && (
               <p style={{ fontSize: '0.8rem', color: 'var(--spartan-text-muted)', marginTop: '2px' }}>
                 {subtitle}
@@ -92,7 +92,7 @@ export const Modal = ({
               justifyContent: 'center',
               transition: 'color 0.2s ease'
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF')}
+            onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--spartan-text-primary)')}
             onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--spartan-text-muted)')}
           >
             <X size={20} />

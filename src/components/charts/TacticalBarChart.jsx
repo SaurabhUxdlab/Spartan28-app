@@ -5,7 +5,7 @@ export const TacticalBarChart = ({
   xKey = 'day',
   yKey = 'sessions',
   height = 180,
-  accentColor = '#00E575'
+  accentColor = 'var(--spartan-green)'
 }) => {
   const [hoveredIdx, setHoveredIdx] = useState(null);
 
@@ -32,7 +32,7 @@ export const TacticalBarChart = ({
               y1={y}
               x2={width - padding}
               y2={y}
-              stroke="rgba(255, 255, 255, 0.05)"
+              stroke="var(--spartan-border-subtle)"
               strokeDasharray="3 3"
             />
           );
@@ -59,7 +59,8 @@ export const TacticalBarChart = ({
                 width={barWidth}
                 height={chartHeight}
                 rx={4}
-                fill="rgba(255, 255, 255, 0.03)"
+                fill="var(--spartan-border-subtle)"
+                opacity={0.4}
               />
               {/* Active Bar */}
               <rect
@@ -68,7 +69,7 @@ export const TacticalBarChart = ({
                 width={barWidth}
                 height={Math.max(4, barHeight)}
                 rx={4}
-                fill={isHovered ? '#00FF87' : accentColor}
+                fill={accentColor}
                 opacity={isHovered ? 1 : 0.85}
                 style={{ transition: 'all 0.2s ease' }}
               />
@@ -76,7 +77,7 @@ export const TacticalBarChart = ({
               <text
                 x={x + barWidth / 2}
                 y={height - 5}
-                fill={isHovered ? '#FFF' : 'var(--spartan-text-muted)'}
+                fill={isHovered ? 'var(--spartan-text-primary)' : 'var(--spartan-text-muted)'}
                 fontSize="10"
                 fontFamily="var(--font-mono)"
                 textAnchor="middle"
@@ -101,7 +102,8 @@ export const TacticalBarChart = ({
             borderRadius: 'var(--radius-xs)',
             fontSize: '0.75rem',
             fontFamily: 'var(--font-mono)',
-            color: '#FFF'
+            color: 'var(--spartan-text-primary)',
+            boxShadow: 'var(--shadow-sm)'
           }}
         >
           {data[hoveredIdx][xKey]}: <span style={{ color: accentColor, fontWeight: 700 }}>{data[hoveredIdx][yKey]} sessions</span>

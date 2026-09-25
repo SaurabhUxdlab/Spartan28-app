@@ -96,7 +96,7 @@ export const LoginView = () => {
           <div style={{ display: 'inline-flex', marginBottom: '1rem' }}>
             <SpartanLogo size="large" />
           </div>
-          <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#FFF' }}>
+          <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--spartan-text-primary)' }}>
             COMMAND ACCESS
           </h1>
           <p style={{ fontSize: '0.82rem', color: 'var(--spartan-text-secondary)', marginTop: '4px' }}>
@@ -211,7 +211,7 @@ export const LoginView = () => {
               >
                 <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: email === acc.email ? 'var(--spartan-green)' : 'var(--spartan-text-muted)' }} />
                 <div>
-                  <div style={{ color: '#FFF', fontSize: '0.75rem' }}>{acc.role}</div>
+                  <div style={{ color: 'var(--spartan-text-primary)', fontSize: '0.75rem' }}>{acc.role}</div>
                   <div style={{ fontSize: '0.65rem', color: 'var(--spartan-text-muted)' }}>{acc.name}</div>
                 </div>
               </button>

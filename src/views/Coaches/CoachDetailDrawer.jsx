@@ -123,7 +123,7 @@ export const CoachDetailDrawer = ({
           />
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-              <h3 style={{ color: '#FFF', fontSize: '1.2rem', fontWeight: 800 }}>{coach.name}</h3>
+              <h3 style={{ color: 'var(--spartan-text-primary)', fontSize: '1.2rem', fontWeight: 800 }}>{coach.name}</h3>
               <StatusBadge status={coach.status || 'Active'} />
             </div>
             <div style={{ fontSize: '0.8rem', color: 'var(--spartan-green)', fontWeight: 600, marginTop: '2px' }}>
@@ -210,7 +210,7 @@ export const CoachDetailDrawer = ({
                 <MapPin size={16} style={{ color: 'var(--spartan-green)' }} />
                 <span>Primary Facility Location</span>
               </div>
-              <div style={{ fontSize: '0.85rem', color: '#FFF', fontWeight: 600 }}>
+              <div style={{ fontSize: '0.85rem', color: 'var(--spartan-text-primary)', fontWeight: 600 }}>
                 {coach.location || 'South Campus Turf'}
               </div>
             </div>

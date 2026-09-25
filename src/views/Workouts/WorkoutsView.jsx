@@ -96,7 +96,7 @@ export const WorkoutsView = ({ triggerAction }) => {
       sortable: true,
       render: (_, row) => (
         <div>
-          <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.9rem' }}>{row.name}</div>
+          <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.9rem' }}>{row.name}</div>
           <div style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)', maxWidth: '280px', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
             {row.description || row.trainingObjective}
           </div>
@@ -120,7 +120,7 @@ export const WorkoutsView = ({ triggerAction }) => {
       key: 'durationMinutes',
       sortable: true,
       render: (val) => (
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.82rem', color: '#FFF' }}>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.82rem', color: 'var(--spartan-text-primary)' }}>
           ⏱️ {val} Min
         </span>
       )
@@ -137,7 +137,7 @@ export const WorkoutsView = ({ triggerAction }) => {
     {
       header: 'Author Coach',
       key: 'authorCoach',
-      render: (val) => <span style={{ fontSize: '0.8rem', color: '#FFF' }}>{val || 'Ron Brezzell'}</span>
+      render: (val) => <span style={{ fontSize: '0.8rem', color: 'var(--spartan-text-primary)' }}>{val || 'Ron Brezzell'}</span>
     },
     {
       header: 'Status',

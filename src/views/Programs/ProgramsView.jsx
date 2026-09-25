@@ -56,7 +56,7 @@ export const ProgramsView = () => {
       sortable: true,
       render: (_, row) => (
         <div>
-          <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.9rem' }}>{row.name}</div>
+          <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.9rem' }}>{row.name}</div>
           <div style={{ fontSize: '0.72rem', color: 'var(--spartan-text-muted)' }}>{row.objective}</div>
         </div>
       )
@@ -66,7 +66,7 @@ export const ProgramsView = () => {
       key: 'durationWeeks',
       sortable: true,
       render: (val, row) => (
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#FFF' }}>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--spartan-text-primary)' }}>
           {val} Weeks ({row.totalSessions} Sessions)
         </span>
       )

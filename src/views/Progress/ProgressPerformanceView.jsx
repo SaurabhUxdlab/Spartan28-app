@@ -62,7 +62,7 @@ export const ProgressPerformanceView = () => {
             <span className="spartan-badge spartan-badge-green">ACTIVE</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-            <span style={{ fontSize: '1.8rem', fontWeight: 800, color: '#FFF' }}>
+            <span style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--spartan-text-primary)' }}>
               {leaderboard.filter(a => a.todaySteps >= 10000).length} / {leaderboard.length}
             </span>
             <span style={{ fontSize: '0.8rem', color: 'var(--spartan-text-muted)' }}>Athletes Hit Target</span>
@@ -163,7 +163,7 @@ export const ProgressPerformanceView = () => {
                       style={{ width: '32px', height: '32px', borderRadius: 'var(--radius-sm)', objectFit: 'cover' }}
                     />
                     <div>
-                      <div style={{ fontWeight: 700, color: '#FFF', fontSize: '0.85rem' }}>{athlete.name}</div>
+                      <div style={{ fontWeight: 700, color: 'var(--spartan-text-primary)', fontSize: '0.85rem' }}>{athlete.name}</div>
                       <div style={{ fontSize: '0.7rem', color: 'var(--spartan-text-muted)' }}>
                         {athlete.todaySteps.toLocaleString()} Steps • {athlete.streakDays}d Streak
                       </div>
@@ -190,7 +190,7 @@ export const ProgressPerformanceView = () => {
                   style={{ width: '48px', height: '48px', borderRadius: 'var(--radius-md)', objectFit: 'cover', border: '2px solid var(--spartan-green)' }}
                 />
                 <div>
-                  <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#FFF' }}>{selectedAthlete.name}</h3>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--spartan-text-primary)' }}>{selectedAthlete.name}</h3>
                   <div style={{ fontSize: '0.75rem', color: 'var(--spartan-text-muted)' }}>
                     Spartan Telemetry Profile • Strength Index: <span style={{ color: 'var(--spartan-green)', fontWeight: 700 }}>{selectedAthlete.strengthScore}/100</span>
                   </div>
@@ -232,25 +232,25 @@ export const ProgressPerformanceView = () => {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
                 <div style={{ background: 'var(--spartan-bg-surface)', padding: '10px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--spartan-border-subtle)' }}>
                   <span style={{ fontSize: '0.68rem', color: 'var(--spartan-text-muted)' }}>SQUAT</span>
-                  <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#FFF', marginTop: '2px' }}>
+                  <div style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--spartan-text-primary)', marginTop: '2px' }}>
                     {selectedAthlete.prs?.squat || '365 lbs'}
                   </div>
                 </div>
                 <div style={{ background: 'var(--spartan-bg-surface)', padding: '10px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--spartan-border-subtle)' }}>
                   <span style={{ fontSize: '0.68rem', color: 'var(--spartan-text-muted)' }}>DEADLIFT</span>
-                  <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#FFF', marginTop: '2px' }}>
+                  <div style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--spartan-text-primary)', marginTop: '2px' }}>
                     {selectedAthlete.prs?.deadlift || '445 lbs'}
                   </div>
                 </div>
                 <div style={{ background: 'var(--spartan-bg-surface)', padding: '10px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--spartan-border-subtle)' }}>
                   <span style={{ fontSize: '0.68rem', color: 'var(--spartan-text-muted)' }}>BENCH PRESS</span>
-                  <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#FFF', marginTop: '2px' }}>
+                  <div style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--spartan-text-primary)', marginTop: '2px' }}>
                     {selectedAthlete.prs?.bench || '285 lbs'}
                   </div>
                 </div>
                 <div style={{ background: 'var(--spartan-bg-surface)', padding: '10px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--spartan-border-subtle)' }}>
                   <span style={{ fontSize: '0.68rem', color: 'var(--spartan-text-muted)' }}>OH PRESS</span>
-                  <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#FFF', marginTop: '2px' }}>
+                  <div style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--spartan-text-primary)', marginTop: '2px' }}>
                     {selectedAthlete.prs?.overheadPress || '185 lbs'}
                   </div>
                 </div>
